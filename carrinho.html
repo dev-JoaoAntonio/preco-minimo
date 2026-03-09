@@ -30,10 +30,8 @@
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
         </button>
 
-        <a href="index.html" class="brand-logo">
-          <div class="brand-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
-          </div>
+        <a href="/" class="brand-logo">
+          <img src="/src/assets/img/logo.png" alt="Preço Mínimo - Pró Saúde" class="logo-oficial">
           <div class="brand-text">
             <span class="brand-title">PREÇO MÍNIMO</span>
             <span class="brand-subtitle">PRÓ SAÚDE</span>
@@ -46,14 +44,10 @@
         </div>
 
         <div class="header-actions">
-          <a href="#" class="action-btn">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-            <span>Entrar</span>
-          </a>
           <a href="carrinho.html" class="action-btn cart-btn">
             <div class="cart-icon-wrapper">
               <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
-              <span class="cart-badge">2</span>
+              <span class="cart-badge"></span>
             </div>
             <span>Carrinho</span>
           </a>
@@ -122,42 +116,47 @@
           <div class="summary-card">
             <h2>Resumo do Pedido</h2>
             
-            <div class="cep-calculator">
-              <label for="cep">Calcular Frete e Prazo</label>
-              <div class="cep-input-group">
-                <input type="text" id="cep" placeholder="00000-000">
-                <button class="btn-outline calc-btn">Calcular</button>
+            <div class="lead-form" style="display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem;">
+              <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-main);">Dados para Entrega</label>
+              <input type="text" id="leadName" placeholder="Seu Nome Completo" class="chat-input" required>
+              <input type="tel" id="leadPhone" placeholder="Seu WhatsApp" class="chat-input" required>
+              <textarea id="leadAddress" placeholder="Endereço completo (Rua, Número, Bairro, Referência)" class="chat-input" style="resize: vertical; min-height: 80px;" required></textarea>
+            </div>
+
+            <div class="coupon-section" style="margin-bottom: 1.5rem; border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
+              <label style="font-size: 0.85rem; font-weight: 600; color: var(--text-main);">Cupom de Desconto</label>
+              <div class="cep-input-group" style="margin-top: 0.5rem;">
+                <input type="text" id="couponCode" placeholder="Ex: BEMVINDO10" style="text-transform: uppercase;">
+                <button class="btn-outline calc-btn" id="applyCouponBtn">Aplicar</button>
               </div>
+              <span id="couponMessage" style="font-size: 0.8rem; margin-top: 0.5rem; display: block; font-weight: 500;"></span>
             </div>
 
             <div class="summary-lines">
               <div class="line">
-                <span>Subtotal (3 itens)</span>
-                <span>R$ 61,76</span>
+                <span>Subtotal</span>
+                <span id="cartSubtotal">R$ 0,00</span>
               </div>
-              <div class="line discount-line">
-                <span>Desconto</span>
-                <span>- R$ 10,47</span>
-              </div>
-              <div class="line">
-                <span>Frete</span>
-                <span>A calcular</span>
+              <div class="line discount-line" id="discountLine" style="display: none; color: #10b981; font-weight: 500;">
+                <span id="discountLabel">Desconto</span>
+                <span id="discountAmount">- R$ 0,00</span>
               </div>
               <div class="divider"></div>
               <div class="line total-line">
-                <span>Total</span>
-                <span class="final-price">R$ 51,29</span>
+                <span>Total Estimado</span>
+                <span class="final-price" id="cartTotal">R$ 0,00</span>
               </div>
+              <p style="font-size: 0.75rem; color: var(--text-muted); text-align: right; margin-top: -10px;">*Pagamento na entrega</p>
             </div>
 
-            <button class="btn btn-primary checkout-btn">
-              Finalizar Compra
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            <button class="btn btn-primary checkout-btn" id="sendOrderBtn">
+              Enviar Pedido
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
             </button>
             
-            <p class="secure-checkout">
+            <p class="secure-checkout" style="margin-top: 1rem;">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-              Ambiente 100% seguro
+              Ambiente 100% seguro e validado
             </p>
           </div>
         </aside>
@@ -170,7 +169,7 @@
       <div class="footer-grid">
         <div class="footer-col brand-col reveal">
           <div class="footer-brand">
-            <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+            <img src="/assets/img/logo.png" alt="Preço Mínimo - Pró Saúde" class="logo-oficial">
             <span class="brand-title" style="color: white;">PREÇO MÍNIMO</span>
           </div>
           <p class="footer-desc">Trazendo inovação, tecnologia e o menor preço garantido para cuidar da sua saúde e bem-estar.</p>
@@ -255,47 +254,7 @@
   </div>
 
   <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      
-      // 1. INICIALIZAÇÃO DO LENIS (SMOOTH SCROLL COM PESO 3)
-      const lenis = new Lenis({
-        duration: 3, 
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
-        orientation: 'vertical',
-        gestureOrientation: 'vertical',
-        smoothWheel: true,
-        wheelMultiplier: 1, 
-        smoothTouch: false, 
-      });
-
-      function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-      }
-      requestAnimationFrame(raf);
-
-      // 2. INTERSECTION OBSERVER (REVEAL ANIMATIONS)
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15 
-      };
-
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll('.reveal').forEach((element) => {
-        observer.observe(element);
-      });
-      
-    });
-  </script>
   <script type="module" src="/src/js/script.js"></script>
+  <script type="module" src="/src/js/carrinho.js"></script>
 </body>
 </html>
