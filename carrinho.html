@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Carrinho de Compras - Farmácia Preço Mínimo.">
+  <title>Meu Carrinho | Preço Mínimo - Pró Saúde</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/src/css/styles.css">
+  
+  <style>
+    .delay-500 { transition-delay: 500ms; }
+    .delay-600 { transition-delay: 600ms; }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="top-bar">
+      <span>Frete Grátis em toda a região de Goiânia e Aparecida de Goiânia</span>
+    </div>
+
+    <div class="main-header">
+      <div class="container main-header-content">
+        <button class="mobile-menu-btn" aria-label="Menu">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        </button>
+
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">PREÇO MÍNIMO</span>
+            <span class="brand-subtitle">PRÓ SAÚDE</span>
+          </div>
+        </a>
+
+        <div class="search-bar">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input type="search" placeholder="Busque por medicamentos, vitaminas, marcas...">
+        </div>
+
+        <div class="header-actions">
+          <a href="#" class="action-btn">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Entrar</span>
+          </a>
+          <a href="carrinho.html" class="action-btn cart-btn">
+            <div class="cart-icon-wrapper">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"></circle><circle cx="19" cy="21" r="1"></circle><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"></path></svg>
+              <span class="cart-badge">2</span>
+            </div>
+            <span>Carrinho</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <div class="container">
+      <div class="cart-header reveal">
+        <h1 class="page-title">Meu Carrinho</h1>
+        <a href="index.html" class="keep-shopping">← Continuar comprando</a>
+      </div>
+
+      <div class="cart-layout">
+        <div class="cart-items-section reveal delay-100">
+          
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=150&h=150&fit=crop" alt="Vitamina C">
+            </div>
+            <div class="item-details">
+              <span class="brand">Cimed</span>
+              <h3 class="item-name">Vitamina C Efervescente 1g com 10 comprimidos</h3>
+              <div class="item-price">R$ 19,43 <span class="old-price">R$ 29,90</span></div>
+            </div>
+            <div class="item-actions">
+              <div class="quantity-control">
+                <button aria-label="Diminuir quantidade">−</button>
+                <input type="number" value="2" min="1">
+                <button aria-label="Aumentar quantidade">+</button>
+              </div>
+              <button class="remove-btn" aria-label="Remover item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path></svg>
+                <span>Remover</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <div class="item-image">
+              <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=150&h=150&fit=crop" alt="Dorflex">
+            </div>
+            <div class="item-details">
+              <span class="brand">Sanofi</span>
+              <h3 class="item-name">Dorflex Analgésico com 36 Comprimidos</h3>
+              <div class="item-price">R$ 22,90</div>
+            </div>
+            <div class="item-actions">
+              <div class="quantity-control">
+                <button aria-label="Diminuir quantidade">−</button>
+                <input type="number" value="1" min="1">
+                <button aria-label="Aumentar quantidade">+</button>
+              </div>
+              <button class="remove-btn" aria-label="Remover item">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"></path></svg>
+                <span>Remover</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="cart-summary-section reveal delay-200">
+          <div class="summary-card">
+            <h2>Resumo do Pedido</h2>
+            
+            <div class="cep-calculator">
+              <label for="cep">Calcular Frete e Prazo</label>
+              <div class="cep-input-group">
+                <input type="text" id="cep" placeholder="00000-000">
+                <button class="btn-outline calc-btn">Calcular</button>
+              </div>
+            </div>
+
+            <div class="summary-lines">
+              <div class="line">
+                <span>Subtotal (3 itens)</span>
+                <span>R$ 61,76</span>
+              </div>
+              <div class="line discount-line">
+                <span>Desconto</span>
+                <span>- R$ 10,47</span>
+              </div>
+              <div class="line">
+                <span>Frete</span>
+                <span>A calcular</span>
+              </div>
+              <div class="divider"></div>
+              <div class="line total-line">
+                <span>Total</span>
+                <span class="final-price">R$ 51,29</span>
+              </div>
+            </div>
+
+            <button class="btn btn-primary checkout-btn">
+              Finalizar Compra
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+            
+            <p class="secure-checkout">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              Ambiente 100% seguro
+            </p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="modern-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col reveal">
+          <div class="footer-brand">
+            <div class="brand-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></div>
+            <span class="brand-title" style="color: white;">PREÇO MÍNIMO</span>
+          </div>
+          <p class="footer-desc">Trazendo inovação, tecnologia e o menor preço garantido para cuidar da sua saúde e bem-estar.</p>
+        </div>
+
+        <div class="footer-col reveal delay-100">
+          <h4>Institucional</h4>
+          <ul>
+            <li><a href="#">Quem Somos</a></li>
+            <li><a href="#">Nossas Lojas físicas</a></li>
+            <li><a href="#">Trabalhe Conosco</a></li>
+            <li><a href="#">Política de Privacidade</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col reveal delay-200">
+          <h4>Atendimento</h4>
+          <ul>
+            <li><a href="#">Meus Pedidos</a></li>
+            <li><a href="#">Trocas e Devoluções</a></li>
+            <li><a href="#">Dúvidas Frequentes (FAQ)</a></li>
+            <li><a href="#">Fale Conosco</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-anvisa reveal delay-300">
+        <p><strong>Aviso Importante:</strong> Medicamentos podem causar efeitos indesejados. Evite a automedicação: informe-se com o farmacêutico. Todo medicamento deve ser mantido fora do alcance das crianças. SE PERSISTIREM OS SINTOMAS, O MÉDICO DEVERÁ SER CONSULTADO.</p>
+      </div>
+
+      <div class="footer-bottom reveal delay-400">
+        <p>© 2024 Farmácia Preço Mínimo Pró Saúde. Todos os direitos reservados.</p>
+        <p>CNPJ: 00.000.000/0001-00</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="fab-ai-container">
+    <div class="fab-tooltip">Assistente Inteligente</div>
+    <button class="fab-ai" aria-label="Falar com Assistente Virtual">
+      <img src="/src/assets/img/assistente.png" alt="Assistente Virtual" class="ai-avatar">
+    </button>
+  </div>
+
+  <aside class="chat-drawer" id="chatDrawer">
+    <div class="chat-header">
+      <div class="chat-agent-info">
+        <img src="/src/assets/img/assistente.png" alt="Assistente Virtual" class="chat-avatar">
+        <div>
+          <h3>Assistente Virtual</h3>
+          <span>Online</span>
+        </div>
+      </div>
+      <button class="close-drawer" id="closeChatBtn" aria-label="Fechar chat">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+
+    <div class="chat-body">
+      <div class="message ai-message">
+        <p>Olá! Sou a assistente de compras inteligente da Preço Mínimo. ✨</p>
+        <p style="margin-top: 8px;">Como posso te ajudar hoje com seus produtos de saúde, beleza ou ler a sua receita?</p>
+        <span class="time">Agora</span>
+      </div>
+      </div>
+
+    <div class="chat-footer">
+      <input type="text" placeholder="Digite sua dúvida..." class="chat-input" id="chatInput">
+      <button class="send-btn" aria-label="Enviar mensagem">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+      </button>
+    </div>
+  </aside>
+
+  <div class="fab-container">
+    <div class="fab-tooltip">Compre pelo WhatsApp!</div>
+    <a href="https://wa.me/55000000000" target="_blank" class="fab-whatsapp" aria-label="Falar no WhatsApp">
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white">
+        <path d="M12.031 0C5.385 0 0 5.385 0 12.031c0 2.637.848 5.086 2.308 7.069L.637 23.593l4.634-1.543a11.96 11.96 0 0 0 6.76 2.046c6.646 0 12.031-5.385 12.031-12.031S18.677 0 12.031 0zm3.89 17.38c-.167.47-1.02.893-1.42.923-.399.03-1.024.168-3.235-.747-2.67-1.104-4.364-3.832-4.498-4.01-.133-.178-1.074-1.43-1.074-2.73 0-1.298.673-1.938.914-2.186.241-.247.525-.308.699-.308.174 0 .348.006.495.012.164.007.382-.061.597.458.218.528.742 1.815.808 1.947.067.133.111.288.026.458-.083.17-.126.276-.251.425-.126.15-.264.32-.38.452-.126.14-.263.295-.11.558.151.263.673 1.116 1.446 1.808.998.895 1.83 1.173 2.094 1.298.263.125.417.104.571-.073.153-.177.66-773.818-.958.158-.184.414-.154.654-.061.241.092 1.52.717 1.78.84.261.123.435.184.5.282.067.098.067.564-.1.1z"/>
+      </svg>
+    </a>
+  </div>
+
+  <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      
+      // 1. INICIALIZAÇÃO DO LENIS (SMOOTH SCROLL COM PESO 3)
+      const lenis = new Lenis({
+        duration: 3, 
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), 
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1, 
+        smoothTouch: false, 
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+      requestAnimationFrame(raf);
+
+      // 2. INTERSECTION OBSERVER (REVEAL ANIMATIONS)
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 
+      };
+
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal').forEach((element) => {
+        observer.observe(element);
+      });
+      
+    });
+  </script>
+  <script src="/src/js/script.js"></script>
+</body>
+</html>
